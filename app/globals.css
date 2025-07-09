@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-title: "Cormorant Garamond", serif;
+  --font-sectionTitle: "Playfair Display", serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+.font-title {
+  font-family: var(--font-title);
+}
+.font-sectionTitle {
+  font-family: var(--font-sectionTitle);
+}
+.font-body {
+  font-family: var(--font-body);
 }
 
 @theme inline {
@@ -20,7 +31,37 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  margin: 0;
+  padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+
+  background: linear-gradient(
+    -45deg,
+    #2c1157,
+    /* Deep Indigo */ #5f0f40,
+    /* Muted Wine Pink */ #1a1a40,
+    /* Rich Space Blue */ #2e1065,
+    /* Dark Purple */ #3a0f66 /* Aurora Blend */
+  );
+
+  background-size: 600% 600%;
+  animation: auroraGradient 30s ease infinite;
+}
+
+@keyframes auroraGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

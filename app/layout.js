@@ -1,14 +1,33 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Nunito, Caveat, Lobster, Cabin } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const nunito = Nunito({
   subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-body",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// const pacifico = Pacifico({
+//   subsets: ["latin"],
+//   weight: ["400"],
+//   variable: "--font-title",
+// });
+
+const cabin = Cabin({
   subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-title",
+});
+const lobster = Lobster({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-cursive",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-script",
 });
 
 export const metadata = {
@@ -20,7 +39,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${nunito.variable} ${cabin.variable} ${lobster.variable} ${caveat.variable} font-body antialiased`}
       >
         {children}
       </body>

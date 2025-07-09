@@ -1,0 +1,27 @@
+[
+  {
+    "question": "What did John the Baptist eat in the wilderness?",
+    "options": [
+      "Bread and Fish",
+      "Locusts and Honey",
+      "Figs and Water",
+      "Dates and Milk"
+    ],
+    "correct": "Locusts and Honey"
+  },
+  {
+    "question": "Who baptized Jesus?",
+    "options": ["Peter", "John the Baptist", "Moses", "Andrew"],
+    "correct": "John the Baptist"
+  },
+  {
+    "question": "What was Jesus’ first miracle?",
+    "options": [
+      "Feeding 5000",
+      "Walking on Water",
+      "Turning Water into Wine",
+      "Healing a Blind Man"
+    ],
+    "correct": "Turning Water into Wine"
+  }
+]
