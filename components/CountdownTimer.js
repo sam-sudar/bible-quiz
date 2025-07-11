@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { Howl } from "howler";
 
 export default function CountdownTimer({
   duration,
@@ -9,6 +10,8 @@ export default function CountdownTimer({
   const [timeLeft, setTimeLeft] = useState(duration);
   const percentage = (timeLeft / duration) * 100;
 
+  const buzzSound = new Howl({ src: ["/sounds/buzz.mp3"] });
+
   useEffect(() => {
     if (paused) return;
 
@@ -16,7 +19,10 @@ export default function CountdownTimer({
       setTimeLeft((prev) => {
         if (prev <= 1) {
           clearInterval(timer);
-          setTimeout(() => onComplete?.(), 0);
+          setTimeout(() => {
+            buzzSound.play(); // 🔊 Play buzz sound
+            onComplete?.();
+          }, 0);
           return 0;
         }
         return prev - 1;
@@ -84,7 +90,13 @@ export default function CountdownTimer({
       </svg>
 
       {/* Center Text */}
-      <div className="absolute inset-0 flex items-center justify-center text-3xl sm:text-4xl font-bold text-yellow-300 select-none">
+      <div
+        className={`absolute inset-0 flex items-center justify-center text-3xl sm:text-4xl font-bold select-none transition-all duration-500 ${
+          timeLeft === 0
+            ? "text-red-400 scale-125 animate-ping"
+            : "text-yellow-300"
+        }`}
+      >
         {formatTime(timeLeft)}
       </div>
     </div>

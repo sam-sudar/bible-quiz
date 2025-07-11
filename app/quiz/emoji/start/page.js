@@ -3,19 +3,18 @@ import { useState } from "react";
 import questions from "@/data/emoji-questions.json";
 import { useRouter } from "next/navigation";
 import CountdownTimer from "@/components/CountdownTimer";
-import AnimatedBackground from "@/components/AnimatedBackground";
 
 export default function EmojiQuizGame() {
   const [index, setIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
   const [timerEnded, setTimerEnded] = useState(false);
   const [paused, setPaused] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
   const router = useRouter();
   const question = questions[index];
 
-  const handleEndQuiz = () => {
-    router.push("/quiz");
-  };
+  const handleEndQuiz = () => setShowConfirm(true);
+  const confirmEnd = () => router.push("/quiz");
 
   const handleNext = () => {
     setIndex((prev) => (prev + 1) % questions.length);
@@ -24,16 +23,16 @@ export default function EmojiQuizGame() {
     setPaused(false);
   };
 
-  const handleTimerEnd = () => {
-    setTimerEnded(true); // ⛔ Turn background red
-  };
+  const handleTimerEnd = () => setTimerEnded(true);
 
   const bgClass = timerEnded
-    ? "bg-red-900"
+    ? "bg-gradient-to-br from-[#7f1d1d] via-[#991b1b] to-[#5c0f0f]"
     : "bg-gradient-to-br from-[#1b1b3a] via-[#2a2255] to-[#0f0c29]";
 
   return (
-    <main className="relative min-h-screen flex flex-col items-center justify-center text-white px-4 py-10 overflow-hidden">
+    <main
+      className={`relative min-h-screen flex flex-col items-center justify-center text-white px-4 py-10 overflow-hidden transition-colors duration-700 ${bgClass}`}
+    >
       {/* End Quiz Button */}
       <button
         onClick={handleEndQuiz}
@@ -43,45 +42,41 @@ export default function EmojiQuizGame() {
       </button>
 
       {/* Title */}
-      <h1 className="text-5xl font-title text-yellow-300 mb-8">Emoji Quiz</h1>
+      <h1 className="text-5xl font-title font-bold text-yellow-300 mb-8">
+        Emoji Quiz
+      </h1>
 
-      {/* Quiz Card */}
-      <div className="bg-white/10 backdrop-blur-md border border-yellow-300 rounded-3xl shadow-2xl w-full max-w-xl px-6 py-12 flex flex-col items-center space-y-10">
-        {/* Emoji Display */}
-        <div className="text-7xl sm:text-8xl">{question.emojis}</div>
+      {/* Emoji Card */}
+      <div className="rounded-3xl shadow-2xl w-full max-w-xl px-6 py-12 flex flex-col items-center mb-20">
+        <div className="text-9xl sm:text-9xl">{question.emojis}</div>
+      </div>
 
-        {/* Countdown Timer */}
+      {/* Timer + Buttons */}
+      <div className="flex flex-col items-center justify-center space-y-4 sm:w-1/3">
         {!showAnswer && (
-          <CountdownTimer
-            duration={30}
-            key={index} // reset on next question
-            onComplete={handleTimerEnd}
-            paused={paused}
-          />
+          <>
+            <CountdownTimer
+              duration={30}
+              key={index}
+              onComplete={handleTimerEnd}
+              paused={paused}
+            />
+
+            <div className="flex gap-4 text-3xl">
+              <button onClick={() => setPaused(true)} title="Pause">
+                ⏸️
+              </button>
+              <button onClick={() => setPaused(false)} title="Resume">
+                ▶️
+              </button>
+            </div>
+          </>
         )}
 
-        {/* Pause / Resume Buttons */}
-        {!showAnswer && (
-          <div className="flex gap-4">
-            <button
-              onClick={() => setPaused(true)}
-              className="px-4 py-2 bg-gray-300 text-black rounded-full hover:bg-gray-400 transition"
-            >
-              Pause
-            </button>
-            <button
-              onClick={() => setPaused(false)}
-              className="px-4 py-2 bg-yellow-300 text-[#1b1b3a] rounded-full hover:bg-yellow-400 transition"
-            >
-              Resume
-            </button>
-          </div>
-        )}
-
-        {/* Answer / Buttons */}
+        {/* Answer / Reveal */}
         {showAnswer ? (
           <>
-            <div className="text-green-300 text-xl font-semibold text-center">
+            <div className="text-green-300 text-3xl font-semibold text-center">
               ✅ Answer: {question.answer}
             </div>
             <button
@@ -94,12 +89,37 @@ export default function EmojiQuizGame() {
         ) : (
           <button
             onClick={() => setShowAnswer(true)}
-            className="mt-4 px-6 py-3 bg-yellow-300 text-[#1b1b3a] rounded-full hover:bg-yellow-400 transition"
+            className="mt-4 px-6 py-3 bg-gradient-to-r from-yellow-300 via-pink-300 to-purple-400 text-[#1b1b3a] rounded-full hover:scale-105 transition"
           >
             Reveal Answer
           </button>
         )}
       </div>
+
+      {/* Confirmation Modal */}
+      {showConfirm && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+          <div className="bg-white text-black rounded-2xl shadow-xl p-8 max-w-sm text-center space-y-6">
+            <h2 className="text-xl font-bold">
+              Are you sure you want to end the quiz?
+            </h2>
+            <div className="flex justify-center gap-4">
+              <button
+                onClick={confirmEnd}
+                className="px-6 py-2 bg-red-500 text-white rounded-full hover:bg-red-600 transition"
+              >
+                Yes
+              </button>
+              <button
+                onClick={() => setShowConfirm(false)}
+                className="px-6 py-2 bg-gray-300 text-black rounded-full hover:bg-gray-400 transition"
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

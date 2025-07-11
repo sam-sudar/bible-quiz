@@ -1,4 +1,4 @@
-import { Nunito, Caveat, Lobster, Cabin } from "next/font/google";
+import { Nunito, Caveat, Lobster, Cabin, Poppins } from "next/font/google";
 import "./globals.css";
 
 const nunito = Nunito({
@@ -13,6 +13,11 @@ const nunito = Nunito({
 //   variable: "--font-title",
 // });
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-poppins",
+});
 const cabin = Cabin({
   subsets: ["latin"],
   weight: ["400"],
@@ -39,7 +44,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${nunito.variable} ${cabin.variable} ${lobster.variable} ${caveat.variable} font-body antialiased`}
+        className={`${nunito.variable} ${cabin.variable} ${poppins.variable} ${lobster.variable} ${caveat.variable} font-body antialiased`}
       >
         {children}
       </body>

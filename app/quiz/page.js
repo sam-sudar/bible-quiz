@@ -25,7 +25,7 @@ export default function QuizPage() {
       </header>
 
       {/* Quiz Options */}
-      <section className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 max-w-6xl w-full px-4">
+      <section className="grid gap-20 grid-cols-1 sm:grid-cols-2 max-w-5xl w-full px-4">
         {games.map((game, index) => (
           <GameCard key={index} {...game} />
         ))}
@@ -39,34 +39,60 @@ const games = [
     title: "Emoji Guess",
     description: "Guess Gospel events using emoji clues",
     link: "/quiz/emoji",
-    icon: <Smile className="text-yellow-700 w-10 h-10" />,
-    bg: "from-yellow-200/80 to-yellow-100/40",
-    ring: "ring-yellow-300",
-    text: "text-yellow-900",
+    icon: <Smile className="text-purple-200 w-10 h-10 drop-shadow-sm" />,
+    bg: "from-[#fbc2eb]/30 via-[#a18cd1]/70 to-[#8fd3f4]/60",
+    ring: "ring-pink-300/50",
+    text: "text-slate-900",
+    iconBg: "bg-black/30",
   },
   {
     title: "Group Quiz",
     description: "Team-based Gospel multiple-choice challenge",
     link: "/quiz/group-quiz",
-    icon: <Users className="text-purple-400 w-10 h-10" />,
-    bg: "from-purple-200/80 to-purple-100/40",
-    ring: "ring-purple-300",
-    text: "text-purple-900",
+    icon: <Users className="text-purple-200 w-10 h-10 drop-shadow-lg" />,
+    bg: "from-[#3a0ca3]/80 via-[#7209b7]/70 to-[#4361ee]/60",
+    ring: "ring-purple-300/50",
+    text: "text-white",
+    iconBg: "bg-white/10",
   },
 ];
 
-function GameCard({ title, description, link, icon, bg, ring, text }) {
+function GameCard({ title, description, link, icon, bg, ring, text, iconBg }) {
   return (
     <Link href={link}>
       <div
-        className={`cursor-pointer bg-gradient-to-br ${bg} border border-white/10 backdrop-blur-md 
-        hover:${ring} hover:ring-2 transition-all duration-300 rounded-2xl p-6 shadow-md min-h-[200px] flex flex-col justify-between`}
+        className={`
+          cursor-pointer group relative bg-gradient-to-br ${bg} 
+          border border-white/10 backdrop-blur-md rounded-2xl p-6 shadow-md min-h-[220px]
+          flex flex-col items-center justify-between text-center 
+          transition-all duration-500 ease-in-out 
+          hover:scale-[1.04] hover:-rotate-1 hover:shadow-2xl hover:${ring} hover:ring-2
+        `}
       >
-        <div className="flex items-center gap-4 mb-4">
+        {/* Glow Animation Border on Hover */}
+        <div className="absolute -inset-[2px] rounded-2xl bg-gradient-to-br from-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-all duration-700 blur-sm z-0" />
+
+        {/* Icon with Animation */}
+        <div
+          className={`${iconBg} p-4 mb-4 rounded-full shadow-inner z-10 transition-transform duration-700 group-hover:scale-125 group-hover:rotate-6`}
+        >
           {icon}
-          <h2 className={`text-3xl font-extrabold ${text}`}>{title}</h2>
         </div>
-        <p className={`text-sm font-body ${text}/80`}>{description}</p>
+
+        {/* Title */}
+        <h2
+          className={`text-3xl sm:text-4xl font-bold font-title ${text} z-10`}
+        >
+          {title}
+        </h2>
+
+        {/* Description */}
+        <p className={`text-md font-body mt-2 ${text}/80 z-10`}>
+          {description}
+        </p>
+
+        {/* Pulse Ring Animation on Hover */}
+        <div className="absolute inset-0 rounded-2xl group-hover:animate-pulse-slow bg-white/5 pointer-events-none z-0" />
       </div>
     </Link>
   );
