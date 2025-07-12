@@ -25,7 +25,7 @@ export default function QuizPage() {
       </header>
 
       {/* Quiz Options */}
-      <section className="grid gap-20 grid-cols-1 sm:grid-cols-2 max-w-5xl w-full px-4">
+      <section className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl w-full px-4">
         {games.map((game, index) => (
           <GameCard key={index} {...game} />
         ))}
@@ -55,6 +55,26 @@ const games = [
     text: "text-white",
     iconBg: "bg-white/10",
   },
+  {
+    title: "Verse Puzzle",
+    description: "Rebuild scrambled verses from Matthew to John",
+    link: "/quiz/verse-puzzle",
+    icon: (
+      <svg
+        className="w-10 h-10 text-green-200 drop-shadow-lg"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        viewBox="0 0 24 24"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+      </svg>
+    ),
+    bg: "from-[#4e54c8]/70 via-[#8f94fb]/60 to-[#a29bfe]/60",
+    ring: "ring-indigo-300/40",
+    text: "text-white",
+    iconBg: "bg-white/10",
+  },
 ];
 
 function GameCard({ title, description, link, icon, bg, ring, text, iconBg }) {
@@ -62,12 +82,13 @@ function GameCard({ title, description, link, icon, bg, ring, text, iconBg }) {
     <Link href={link}>
       <div
         className={`
-          cursor-pointer group relative bg-gradient-to-br ${bg} 
-          border border-white/10 backdrop-blur-md rounded-2xl p-6 shadow-md min-h-[220px]
-          flex flex-col items-center justify-between text-center 
-          transition-all duration-500 ease-in-out 
-          hover:scale-[1.04] hover:-rotate-1 hover:shadow-2xl hover:${ring} hover:ring-2
-        `}
+    cursor-pointer group relative bg-gradient-to-br ${bg} 
+    border border-white/10 backdrop-blur-md rounded-2xl p-5 shadow-md
+    min-h-[200px] w-full
+    flex flex-col items-center justify-between text-center 
+    transition-all duration-500 ease-in-out 
+    hover:scale-[1.04] hover:-rotate-1 hover:shadow-2xl hover:${ring} hover:ring-2
+  `}
       >
         {/* Glow Animation Border on Hover */}
         <div className="absolute -inset-[2px] rounded-2xl bg-gradient-to-br from-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-all duration-700 blur-sm z-0" />
@@ -81,13 +102,12 @@ function GameCard({ title, description, link, icon, bg, ring, text, iconBg }) {
 
         {/* Title */}
         <h2
-          className={`text-3xl sm:text-4xl font-bold font-title ${text} z-10`}
+          className={`text-2xl sm:text-3xl font-bold font-title ${text} z-10`}
         >
           {title}
         </h2>
 
-        {/* Description */}
-        <p className={`text-md font-body mt-2 ${text}/80 z-10`}>
+        <p className={`text-sm font-body mt-2 ${text}/80 z-10`}>
           {description}
         </p>
 

@@ -1,0 +1,59 @@
+[
+  {
+    "reference": "Matthew 5:14",
+    "original": [
+      "You are the light of",
+      "the world. A town built",
+      "on a hill cannot be hidden."
+    ],
+    "shuffled": [
+      "the world. A town built",
+      "on a hill cannot be hidden.",
+      "You are the light of"
+    ]
+  },
+  {
+    "reference": "Mark 10:27",
+    "original": [
+      "With man this is impossible,",
+      "but not with God; all",
+      "things are possible with God."
+    ],
+    "shuffled": [
+      "With man this is impossible,",
+      "things are possible with God.",
+      "but not with God; all"
+    ]
+  },
+  {
+    "reference": "Luke 6:31",
+    "original": ["Do to others", "as you would", "have them do to you."],
+    "shuffled": ["as you would", "Do to others", "have them do to you."]
+  },
+  {
+    "reference": "John 3:16",
+    "original": [
+      "For God so loved the world that he",
+      "gave his one and only Son, that whoever",
+      "believes in him shall not perish but have eternal life."
+    ],
+    "shuffled": [
+      "For God so loved the world that he",
+      "believes in him shall not perish but have eternal life.",
+      "gave his one and only Son, that whoever"
+    ]
+  },
+  {
+    "reference": "John 14:6",
+    "original": [
+      "Jesus answered, 'I am the way and",
+      "the truth and the life. No one",
+      "comes to the Father except through me.'"
+    ],
+    "shuffled": [
+      "the truth and the life. No one",
+      "Jesus answered, 'I am the way and",
+      "comes to the Father except through me.'"
+    ]
+  }
+]
