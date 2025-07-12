@@ -8,19 +8,22 @@ export default function GroupQuizQuestion() {
   const { id } = useParams();
   const router = useRouter();
   const currentIndex = parseInt(id || "0", 10);
+  const question = groupQuestions[currentIndex];
 
-  const [selected, setSelected] = useState(null);
-  const [feedback, setFeedback] = useState(""); // 'correct' or 'wrong'
-  const [disabled, setDisabled] = useState(false);
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [correctSelected, setCorrectSelected] = useState(false);
+  const [paused, setPaused] = useState(false);
   const [showEndPopup, setShowEndPopup] = useState(false);
   const [showQuizEndPopup, setShowQuizEndPopup] = useState(false);
+  const [showReveal, setShowReveal] = useState(false);
+  const [shakeOption, setShakeOption] = useState(null);
 
   const correctSound = useRef(null);
-
-  const question = groupQuestions[currentIndex];
+  const wrongSound = useRef(null);
 
   useEffect(() => {
     correctSound.current = new Audio("/sounds/correct.mp3");
+    wrongSound.current = new Audio("/sounds/buzz.mp3");
   }, []);
 
   if (!question) {
@@ -32,24 +35,43 @@ export default function GroupQuizQuestion() {
   }
 
   const handleAnswer = (option) => {
-    if (disabled) return;
+    if (correctSelected || selectedOptions.includes(option)) return;
 
-    setSelected(option);
-    setDisabled(true);
-
+    setPaused(true); // Stop timer
     if (option === question.correct) {
-      setFeedback("correct");
       correctSound.current?.play();
+      setCorrectSelected(true);
     } else {
-      setFeedback("wrong");
+      // Re-play buzz sound on every wrong attempt
+      if (wrongSound.current) {
+        wrongSound.current.pause();
+        wrongSound.current.currentTime = 0;
+        wrongSound.current.play();
+      }
+
+      setSelectedOptions((prev) => [...prev, option]);
+      setShowReveal(true);
+      setShakeOption(option);
+
+      // Remove shake after animation duration
+      setTimeout(() => setShakeOption(null), 600);
     }
   };
 
   const handleTimeUp = () => {
-    if (!selected) {
-      setFeedback("wrong");
-      setDisabled(true);
+    if (!correctSelected) {
+      if (wrongSound.current) {
+        wrongSound.current.pause();
+        wrongSound.current.currentTime = 0;
+        wrongSound.current.play();
+      }
+      setPaused(true);
+      setShowReveal(true);
     }
+  };
+
+  const revealCorrectAnswer = () => {
+    setCorrectSelected(true);
   };
 
   const goToNext = () => {
@@ -62,10 +84,7 @@ export default function GroupQuizQuestion() {
     }
   };
 
-  const confirmEndQuiz = () => {
-    setShowEndPopup(true);
-  };
-
+  const confirmEndQuiz = () => setShowEndPopup(true);
   const endQuiz = () => {
     setShowEndPopup(false);
     router.push("/quiz");
@@ -74,29 +93,37 @@ export default function GroupQuizQuestion() {
   return (
     <main
       className={`min-h-screen px-4 py-8 text-white transition-all duration-500 ${
-        feedback === "correct"
-          ? "bg-green-800"
-          : feedback === "wrong"
-          ? "bg-red-900"
+        correctSelected
+          ? "bg-green-900"
           : "bg-gradient-to-br from-[#1b1b3a] via-[#2a2255] to-[#0f0c29]"
       }`}
     >
-      {/* Top Controls */}
+      {/* Top Buttons */}
       <div className="flex justify-between items-center mb-6">
         <button
           onClick={confirmEndQuiz}
-          className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full shadow-lg transition"
+          className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full shadow-lg"
         >
           End Quiz
         </button>
-        {feedback && (
-          <button
-            onClick={goToNext}
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full transition"
-          >
-            Next
-          </button>
-        )}
+        <div className="flex gap-4">
+          {showReveal && !correctSelected && (
+            <button
+              onClick={revealCorrectAnswer}
+              className="bg-yellow-400 hover:bg-yellow-500 text-black px-4 py-2 rounded-full shadow"
+            >
+              Reveal Answer
+            </button>
+          )}
+          {correctSelected && (
+            <button
+              onClick={goToNext}
+              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full shadow"
+            >
+              Next
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Question Card */}
@@ -105,13 +132,12 @@ export default function GroupQuizQuestion() {
           {question.question}
         </h2>
 
-        {/* Timer */}
         <div className="flex justify-center mt-6">
           <CountdownTimer
             key={currentIndex}
             duration={15}
             onComplete={handleTimeUp}
-            paused={disabled}
+            paused={paused}
           />
         </div>
       </div>
@@ -119,25 +145,23 @@ export default function GroupQuizQuestion() {
       {/* Options */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-6xl mx-auto px-4">
         {question.options.map((opt, idx) => {
-          const isSelected = selected === opt;
-          const isCorrect = opt === question.correct;
+          const isWrong = selectedOptions.includes(opt);
+          const isCorrect = opt === question.correct && correctSelected;
+          const isDisabled = isWrong || isCorrect;
 
           let buttonClass =
             "bg-gradient-to-br from-yellow-300 to-yellow-500 text-black hover:scale-105";
-          if (isSelected) {
-            buttonClass = isCorrect
-              ? "bg-green-500 text-white"
-              : "bg-red-500 text-white";
-          } else if (disabled && isCorrect) {
-            buttonClass = "bg-green-600 text-white";
-          }
+
+          if (isCorrect) buttonClass = "bg-green-600 text-white";
+          else if (isWrong) buttonClass = "bg-red-600 text-white";
+          if (shakeOption === opt) buttonClass += " animate-shake";
 
           return (
             <button
               key={idx}
               onClick={() => handleAnswer(opt)}
-              disabled={disabled && selected}
               className={`py-8 w-full text-2xl font-semibold rounded-2xl shadow-xl transition-all duration-300 ${buttonClass}`}
+              disabled={isDisabled}
             >
               {opt}
             </button>
@@ -145,7 +169,7 @@ export default function GroupQuizQuestion() {
         })}
       </div>
 
-      {/* Confirm End Popup */}
+      {/* End Quiz Confirmation */}
       {showEndPopup && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/60 z-50">
           <div className="bg-white text-black rounded-xl p-8 max-w-sm w-full text-center space-y-6 shadow-lg">
