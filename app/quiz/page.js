@@ -1,11 +1,27 @@
 "use client";
 import Link from "next/link";
-import { Smile, Users, AlarmClock } from "lucide-react";
+import { Smile, Users, AlarmClock, BarChart3 } from "lucide-react";
 
 export default function QuizPage() {
   return (
     <main className="min-h-screen relative bg-transparent text-white px-6 py-12 flex flex-col items-center">
       {/* Floating Custom Timer Icon */}
+      <Link
+        href="/quiz/scorecard"
+        className="fixed left-6 bottom-6 z-50 group perspective-3d"
+        title="View Scoreboard"
+      >
+        <div
+          className="
+            transform transition-transform duration-500 group-hover:-rotate-x-6 group-hover:-rotate-y-6 group-hover:scale-105 
+            bg-gradient-to-br from-yellow-300 via-pink-400 to-purple-500
+            p-4 rounded-full shadow-2xl border border-white/10 hover:shadow-yellow-300/50
+            hover:animate-pulse
+          "
+        >
+          <BarChart3 className="text-[#1b1b3a] w-8 h-8 drop-shadow-lg" />
+        </div>
+      </Link>
       <Link
         href="/quiz/timer"
         className="absolute top-6 right-6 p-2 bg-white/10 hover:bg-emerald-500/20 rounded-full shadow-md transition"
@@ -16,9 +32,16 @@ export default function QuizPage() {
 
       {/* Header */}
       <header className="text-center mb-40">
-        <h1 className="text-6xl font-title text-yellow-300 tracking-wider drop-shadow-xl">
+        {/* <h1 className="text-6xl font-title text-yellow-300 tracking-wider drop-shadow-xl">
           Group Bible Quiz
+        </h1> */}
+        <h1 className="text-4xl md:text-6xl font-title font-thin tracking-wider mb-4">
+          GROUP{" "}
+          <span className="font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            QUIZ
+          </span>
         </h1>
+        <div className="w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
         <p className="text-lg font-body text-[#f4e9cd] mt-4 italic max-w-xl mx-auto">
           “Let the Word of Christ dwell in you richly.” – Colossians 3:16
         </p>
