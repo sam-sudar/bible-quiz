@@ -3,15 +3,20 @@ import Link from "next/link";
 
 export default function GroupQuizIntro() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#1b1b3a] via-[#2a2255] to-[#0f0c29] text-white flex items-center justify-center px-4 py-16 relative overflow-hidden">
+    <main className="min-h-screen  text-white flex items-center justify-center px-4 py-16 relative overflow-hidden">
       <div className="w-full max-w-5xl text-center ">
         {/* Title */}
-        <h1 className="text-5xl sm:text-7xl font-black font-title text-yellow-300 drop-shadow-lg mb-4">
-          Group Quiz
+        <h1 className="text-4xl md:text-6xl font-title font-thin tracking-wider mb-4">
+          GROUP{" "}
+          <span className="font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            QUIZ
+          </span>
         </h1>
 
+        <div className="w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-4"></div>
+
         {/* Verse */}
-        <p className="text-md text-[#f4e9cd] italic">
+        <p className="text-md text-blue-300 italic">
           “Let the Word of Christ dwell in you richly.” – Colossians 3:16
         </p>
 
@@ -20,10 +25,10 @@ export default function GroupQuizIntro() {
           <div className="absolute -top-8 -left-8 w-40 h-40 bg-gradient-to-br from-purple-500 via-pink-400 to-yellow-300 opacity-20 rounded-full blur-3xl group-hover:opacity-40 transition-all duration-700" />
           <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tr from-blue-300 via-purple-400 to-pink-400 opacity-20 rounded-full blur-2xl group-hover:opacity-40 transition-all duration-700" />
 
-          <h2 className="text-4xl font-poppins font-semibold text-yellow-200 mb-4 flex items-center gap-2">
+          {/* <h2 className="text-4xl font-poppins font-semibold text-yellow-200 mb-4 flex items-center gap-2">
             📜 Rules
-          </h2>
-          <ul className="list-disc list-inside text-white/90 text-base font-poppins text-lg space-y-2 font-body">
+          </h2> */}
+          <ul className="list-disc list-inside text-white/90 font-poppins text-lg space-y-2 font-body">
             <li>Each team will be shown a multiple-choice question.</li>
             <li>You have 15 seconds to discuss and answer.</li>
             <li>Select the right option within the time limit.</li>

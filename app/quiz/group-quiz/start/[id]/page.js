@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import groupQuestions from "@/data/group-questions.json";
 import CountdownTimer from "@/components/CountdownTimer";
+import ConfirmModal from "@/components/ConfirmModal";
 
 export default function GroupQuizQuestion() {
   const { id } = useParams();
@@ -20,6 +21,7 @@ export default function GroupQuizQuestion() {
 
   const correctSound = useRef(null);
   const wrongSound = useRef(null);
+  const confirmEnd = () => router.push("/quiz");
 
   useEffect(() => {
     correctSound.current = new Audio("/sounds/correct.mp3");
@@ -93,9 +95,7 @@ export default function GroupQuizQuestion() {
   return (
     <main
       className={`min-h-screen px-4 py-8 text-white transition-all duration-500 ${
-        correctSelected
-          ? "bg-green-900"
-          : "bg-gradient-to-br from-[#1b1b3a] via-[#2a2255] to-[#0f0c29]"
+        correctSelected ? "bg-green-900" : "bg-gradient-to-br "
       }`}
     >
       {/* Top Buttons */}
@@ -171,28 +171,11 @@ export default function GroupQuizQuestion() {
 
       {/* End Quiz Confirmation */}
       {showEndPopup && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/60 z-50">
-          <div className="bg-white text-black rounded-xl p-8 max-w-sm w-full text-center space-y-6 shadow-lg">
-            <h2 className="text-2xl font-bold">End Quiz?</h2>
-            <p className="text-sm text-gray-700">
-              Are you sure you want to end the quiz and return to menu?
-            </p>
-            <div className="flex justify-center gap-4">
-              <button
-                onClick={endQuiz}
-                className="px-4 py-2 bg-red-500 text-white rounded-full"
-              >
-                Yes
-              </button>
-              <button
-                onClick={() => setShowEndPopup(false)}
-                className="px-4 py-2 bg-gray-300 text-black rounded-full"
-              >
-                Cancel
-              </button>
-            </div>
-          </div>
-        </div>
+        <ConfirmModal
+          title="Are you sure you want to end the quiz?"
+          onConfirm={confirmEnd}
+          onCancel={() => setShowConfirm(false)}
+        />
       )}
 
       {/* Quiz Ended Popup */}

@@ -13,35 +13,35 @@ const VerticalStandings = () => {
   const fallbackTeamData = useMemo(
     () => [
       {
-        name: "Alpha Systems",
+        name: "Group 1",
         score: 850,
         color: "from-blue-600 to-blue-400",
         shadowColor: "shadow-blue-500/40",
         glowColor: "shadow-[0_0_30px_rgba(59,130,246,0.5)]",
       },
       {
-        name: "Beta Dynamics",
+        name: "Group 2",
         score: 430,
         color: "from-red-600 to-red-400",
         shadowColor: "shadow-red-500/40",
         glowColor: "shadow-[0_0_30px_rgba(239,68,68,0.5)]",
       },
       {
-        name: "Gamma Force",
+        name: "Group 3",
         score: 720,
         color: "from-emerald-600 to-emerald-400",
         shadowColor: "shadow-emerald-500/40",
         glowColor: "shadow-[0_0_30px_rgba(16,185,129,0.5)]",
       },
       {
-        name: "Delta Prime",
+        name: "Group 4",
         score: 590,
         color: "from-purple-600 to-purple-400",
         shadowColor: "shadow-purple-500/40",
         glowColor: "shadow-[0_0_30px_rgba(147,51,234,0.5)]",
       },
       {
-        name: "Epsilon Elite",
+        name: "Group 5",
         score: 680,
         color: "from-amber-600 to-amber-400",
         shadowColor: "shadow-amber-500/40",
@@ -234,7 +234,7 @@ const VerticalStandings = () => {
               : "opacity-0 -translate-y-10"
           }`}
         >
-          <h1 className="text-5xl md:text-7xl font-thin tracking-[0.2em] mb-6 relative">
+          <h1 className="text-5xl md:text-7xl  mb-6 font-title relative">
             <span className="text-gray-300">PERFORMANCE</span>
             <div className="inline-block ml-6">
               <span className="font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-pulse">

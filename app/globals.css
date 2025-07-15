@@ -154,3 +154,16 @@ body {
   z-index: 0;
   pointer-events: none;
 }
+
+@keyframes glow-border {
+  0%,
+  100% {
+    box-shadow: 0 0 5px #fff2, 0 0 10px #fff3;
+  }
+  50% {
+    box-shadow: 0 0 15px #fff4, 0 0 30px #fff5;
+  }
+}
+.animate-glow {
+  animation: glow-border 3s infinite ease-in-out;
+}

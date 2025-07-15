@@ -54,26 +54,26 @@ const ChurchQuizWelcome = () => {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-7xl w-full h-full flex items-center justify-between">
+      <div className="relative z-10 px-8 w-full h-full  flex items-center justify-between">
         {/* Left Side */}
-        <div className="w-1/2 flex flex-col justify-center space-y-5 pr-8">
+        <div className="w-[70%] flex flex-col justify-center space-y-5 pr-8">
           {/* Title */}
           <h1
-            className={`text-5xl font-bold tracking-wider transition-all duration-700 ${
+            className={`text-7xl font-title font-bold tracking-wider transition-all duration-700 ${
               show.title
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 -translate-y-4"
             }`}
           >
-            <span className="text-gray-300">CHURCH</span>{" "}
+            <span className="text-gray-300">HEBRON</span>{" "}
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
-              OF GOD
+              AG CHURCH
             </span>
           </h1>
 
           {/* Subtitle */}
           <h2
-            className={`text-lg text-blue-300 font-medium tracking-wide transition-all duration-700 ${
+            className={`text-2xl font-bold text-blue-300  tracking-wide transition-all duration-700 ${
               show.subtitle
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-4"
@@ -84,19 +84,19 @@ const ChurchQuizWelcome = () => {
 
           {/* Memory Verse */}
           <div
-            className={`transition-all duration-700 ${
+            className={`transition-all mt-10 duration-700 ${
               show.verse
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-4"
             }`}
           >
-            <div className="bg-gradient-to-r from-gray-800/60 to-gray-700/50 backdrop-blur-sm border border-white/10 rounded-xl p-4 shadow">
-              <p className="italic text-sm md:text-base text-gray-200">
+            <div className="bg-gradient-to-r from-gray-800/60 to-gray-700/50 backdrop-blur-sm border border-white/10 w-[75%] rounded-xl p-4 shadow">
+              <p className="italic text-base text-gray-200">
                 "Let the little children come to me, for the kingdom of heaven
                 belongs to such as these."
               </p>
-              <span className="text-blue-400 text-sm font-medium block mt-2">
-                — Matthew 19:14
+              <span className="text-blue-300 text-sm font-medium block mt-2">
+                Matthew 19:14
               </span>
             </div>
           </div>
@@ -124,15 +124,15 @@ const ChurchQuizWelcome = () => {
           >
             <button
               onClick={() => (window.location.href = "/quiz")}
-              className="mt-3 bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 rounded-full text-sm font-semibold shadow-md hover:scale-105 transition-transform"
+              className="mt-7 bg-gradient-to-r from-blue-600 to-purple-600 cursor-pointer px-6 py-3 rounded-full text-base font-semibold shadow-md hover:scale-105 transition-transform"
             >
-              Begin Your Journey →
+              Let's Begin →
             </button>
           </div>
         </div>
 
         {/* Right Side - Gospels */}
-        <div className="w-1/2 flex flex-col items-center justify-center space-y-6">
+        <div className="w-[30%]  flex flex-col items-center justify-center space-y-6">
           <h3
             className={`text-2xl font-semibold text-blue-300 tracking-wider transition-all duration-700 ${
               show.gospels
@@ -153,9 +153,9 @@ const ChurchQuizWelcome = () => {
             {gospelBooks.map((book) => (
               <div
                 key={book.name}
-                className={`bg-gradient-to-t ${book.color} rounded-xl p-5 shadow-md border border-white/10`}
+                className={`bg-gradient-to-t ${book.color} rounded-2xl p-8 cursor-pointer shadow-md border border-white/10`}
               >
-                <h4 className="text-white text-lg font-semibold">
+                <h4 className="text-white text-2xl  font-semibold">
                   {book.name}
                 </h4>
                 <p className="text-white/70 text-sm">{book.chapter}</p>

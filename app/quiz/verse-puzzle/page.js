@@ -6,9 +6,14 @@ export default function VersePuzzleIntro() {
     <main className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white flex items-center justify-center px-4 py-16">
       <div className="w-full max-w-5xl text-center  animate-fade-up">
         {/* Title */}
-        <h1 className="text-5xl sm:text-7xl font-black font-title text-yellow-300 drop-shadow-xl mb-5">
-          Verse Puzzle
+        <h1 className="text-4xl md:text-6xl font-title font-thin tracking-wider mb-4">
+          VERSE{" "}
+          <span className="font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            PUZZLE
+          </span>
         </h1>
+
+        <div className="w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-4"></div>
 
         {/* New Verse */}
         <p className="text-md text-[#f4e9cd] italic mb-10">
@@ -26,9 +31,9 @@ export default function VersePuzzleIntro() {
 
           {/* Content */}
           <div className="relative z-10 text-left w-full space-y-5">
-            <h2 className="text-4xl font-poppins font-semibold text-yellow-100 mb-4 text-center">
+            {/* <h2 className="text-4xl font-poppins font-semibold text-yellow-100 mb-4 text-center">
               🧠 How to Play
-            </h2>
+            </h2> */}
             <ul className="list-disc list-inside font-poppins text-lg text-gray-100 space-y-3 max-w-3xl mx-auto text-left">
               <li>
                 You’ll be shown{" "}

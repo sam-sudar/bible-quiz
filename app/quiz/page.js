@@ -42,7 +42,7 @@ export default function QuizPage() {
           </span>
         </h1>
         <div className="w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
-        <p className="text-lg font-body text-[#f4e9cd] mt-4 italic max-w-xl mx-auto">
+        <p className="text-lg font-body text-blue-300 mt-4 italic max-w-xl mx-auto">
           “Let the Word of Christ dwell in you richly.” – Colossians 3:16
         </p>
       </header>
@@ -63,9 +63,9 @@ const games = [
     description: "Guess Gospel events using emoji clues",
     link: "/quiz/emoji",
     icon: <Smile className="text-purple-200 w-10 h-10 drop-shadow-sm" />,
-    bg: "from-[#fbc2eb]/30 via-[#a18cd1]/70 to-[#8fd3f4]/60",
+    bg: "from-[#4361ee]/30  to-[#5A4FCF]/60",
     ring: "ring-pink-300/50",
-    text: "text-slate-900",
+    text: "text-slate-300",
     iconBg: "bg-black/30",
   },
   {
@@ -73,7 +73,7 @@ const games = [
     description: "Team-based Gospel multiple-choice challenge",
     link: "/quiz/group-quiz",
     icon: <Users className="text-purple-200 w-10 h-10 drop-shadow-lg" />,
-    bg: "from-[#3a0ca3]/80 via-[#7209b7]/70 to-[#4361ee]/60",
+    bg: "from-[#7209b7]/70 to-[#3a0ca3]/60",
     ring: "ring-purple-300/50",
     text: "text-white",
     iconBg: "bg-white/10",
@@ -93,7 +93,7 @@ const games = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
       </svg>
     ),
-    bg: "from-[#4e54c8]/70 via-[#8f94fb]/60 to-[#a29bfe]/60",
+    bg: "from-[#0892d0]/70 to-[#8f94fb]/60",
     ring: "ring-indigo-300/40",
     text: "text-white",
     iconBg: "bg-white/10",
