@@ -1,5 +1,6 @@
 import { Nunito, Caveat, Lobster, Cabin, Poppins } from "next/font/google";
 import "./globals.css";
+import BackgroundEffects from "@/components/BackgroundEffects";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -44,9 +45,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${nunito.variable} ${cabin.variable} ${poppins.variable} ${lobster.variable} ${caveat.variable} font-body antialiased`}
+        className={` background-glow ${nunito.variable} ${cabin.variable} ${poppins.variable} ${lobster.variable} ${caveat.variable} font-body antialiased`}
       >
-        {children}
+        {/* Shared Background Effects */}
+        <BackgroundEffects />
+
+        {/* Page Content */}
+        <main className="relative z-10">{children}</main>
       </body>
     </html>
   );
