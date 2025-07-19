@@ -16,7 +16,7 @@ export default function EmojiQuizById() {
   const [timerEnded, setTimerEnded] = useState(false);
   const [paused, setPaused] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
-  const [endType, setEndType] = useState("manual"); // or "finished"
+  const [endType, setEndType] = useState("manual");
 
   useEffect(() => {
     setShowAnswer(false);
@@ -25,18 +25,15 @@ export default function EmojiQuizById() {
   }, [id]);
 
   const handleTimerEnd = () => setTimerEnded(true);
-
   const handleNext = () => {
     const nextIndex = index + 1;
-
     if (nextIndex >= questions.length) {
       setEndType("finished");
-      setShowConfirm(true); // Show end modal if quiz is finished
+      setShowConfirm(true);
     } else {
       router.push(`/quiz/emoji/start/${nextIndex}`);
     }
   };
-
   const confirmEnd = () => router.push("/quiz");
 
   if (!question) {
@@ -66,8 +63,13 @@ export default function EmojiQuizById() {
       </button>
 
       {/* Emoji Card */}
-      <div className="rounded-3xl shadow-2xl w-full max-w-xl px-6 py-12 flex flex-col items-center mb-20">
-        <div className="text-9xl sm:text-9xl">{question.emojis}</div>
+      <div className="w-full max-w-6xl bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl shadow-2xl px-6 py-12 flex flex-col items-center gap-6 mb-20">
+        <div className="text-7xl sm:text-8xl md:text-9xl text-center break-words w-full whitespace-pre-wrap">
+          {question.emojis}
+        </div>
+        <div className="text-lg sm:text-xl md:text-2xl text-center text-yellow-200 px-4 italic">
+          💡 Hint: {question.context}
+        </div>
       </div>
 
       {/* Timer + Buttons */}
@@ -80,7 +82,6 @@ export default function EmojiQuizById() {
               onComplete={handleTimerEnd}
               paused={paused}
             />
-
             <div className="flex gap-4 text-3xl">
               <button onClick={() => setPaused(true)} title="Pause">
                 ⏸️

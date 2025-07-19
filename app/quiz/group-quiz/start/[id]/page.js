@@ -114,18 +114,105 @@ export default function GroupQuizQuestion() {
     router.push("/quiz");
   };
 
-  // Dynamic grid layout based on number of options
-  const getGridLayout = () => {
-    if (englishOptions.length === 4) {
-      return "grid-cols-2 gap-4 md:gap-6";
+  // Enhanced layout for options - Full width usage
+  const getOptionsLayout = () => {
+    if (englishOptions.length === 3) {
+      // 2 on top, 1 on bottom - same size as others
+      return (
+        <div className="h-full flex flex-col justify-center space-y-6">
+          <div className="grid grid-cols-2 gap-6">
+            {englishOptions
+              .slice(0, 2)
+              .map((englishOpt, idx) => renderOption(englishOpt, idx))}
+          </div>
+          <div className="grid grid-cols-2 gap-6">
+            {/* Empty space */}
+            <div></div>
+            {/* Third option - same size */}
+            <div>{renderOption(englishOptions[2], 2)}</div>
+          </div>
+        </div>
+      );
     } else {
-      return "grid-cols-1 md:grid-cols-3 gap-4 md:gap-6";
+      // Regular 2x2 grid for 4 options
+      return (
+        <div className="h-full flex items-center justify-center">
+          <div className="grid grid-cols-2 gap-6 w-full">
+            {englishOptions.map((englishOpt, idx) =>
+              renderOption(englishOpt, idx)
+            )}
+          </div>
+        </div>
+      );
     }
+  };
+
+  const renderOption = (englishOpt, idx) => {
+    const tamilOpt = tamilOptions[idx] || "";
+    const isWrong = selectedOptions.some((opt) => opt.en === englishOpt);
+    const isCorrect = englishOpt === englishCorrect && correctSelected;
+    const isDisabled = isWrong || isCorrect;
+
+    let buttonClass, shadowClass, borderClass;
+
+    if (isCorrect) {
+      buttonClass =
+        "bg-gradient-to-br from-emerald-500/90 via-teal-500/85 to-cyan-600/90";
+      shadowClass = "shadow-emerald-500/40";
+      borderClass = "border-emerald-400/60";
+    } else if (isWrong) {
+      buttonClass =
+        "bg-gradient-to-br from-red-500/90 via-pink-500/85 to-rose-600/90";
+      shadowClass = "shadow-red-500/40";
+      borderClass = "border-red-400/60";
+    } else {
+      buttonClass =
+        "bg-gradient-to-br from-slate-700/70 via-slate-600/80 to-slate-800/90 hover:from-indigo-600/80 hover:via-purple-600/85 hover:to-blue-700/90";
+      shadowClass = "hover:shadow-indigo-500/30";
+      borderClass = "border-slate-400/30 hover:border-indigo-400/50";
+    }
+
+    return (
+      <button
+        key={idx}
+        onClick={() => handleAnswer(englishOpt, tamilOpt)}
+        className={`
+          group relative overflow-hidden h-24 md:h-28
+          backdrop-blur-xl border-2 rounded-xl px-6 py-4
+          transition-all duration-500 transform w-full
+          ${buttonClass}
+          ${shadowClass}
+          ${borderClass}
+          ${
+            isDisabled
+              ? "cursor-not-allowed opacity-90"
+              : "hover:scale-105 hover:shadow-xl"
+          }
+          ${shakeOption === englishOpt ? "animate-shake" : ""}
+        `}
+        disabled={isDisabled}
+      >
+        {/* Enhanced button glow effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+
+        {/* Subtle animated border */}
+        <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse"></div>
+
+        <div className="relative z-10 text-center h-full flex flex-col justify-center space-y-2">
+          <div className="text-xl md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg leading-tight">
+            {englishOpt}
+          </div>
+          <div className="text-base md:text-lg text-slate-200/90 font-tamil font-medium">
+            {tamilOpt}
+          </div>
+        </div>
+      </button>
+    );
   };
 
   return (
     <main
-      className={`min-h-screen overflow-hidden transition-all duration-1000 ${
+      className={`h-screen overflow-hidden transition-all duration-1000 ${
         correctSelected
           ? "bg-gradient-to-br from-slate-950 via-emerald-950 to-cyan-950"
           : showReveal && !correctSelected
@@ -138,10 +225,10 @@ export default function GroupQuizQuestion() {
         <div
           className={`absolute -top-40 -right-40 w-96 h-96 rounded-full blur-3xl transition-all duration-1000 ${
             correctSelected
-              ? "bg-gradient-to-r from-emerald-400/20 to-cyan-400/20"
+              ? "bg-gradient-to-r from-emerald-400/25 to-cyan-400/25"
               : showReveal && !correctSelected
-              ? "bg-gradient-to-r from-red-400/20 to-pink-400/20"
-              : "bg-gradient-to-r from-purple-400/15 to-blue-400/15"
+              ? "bg-gradient-to-r from-red-400/25 to-pink-400/25"
+              : "bg-gradient-to-r from-purple-400/20 to-blue-400/20"
           }`}
           style={{
             animation: "float 8s ease-in-out infinite",
@@ -151,49 +238,36 @@ export default function GroupQuizQuestion() {
         <div
           className={`absolute -bottom-40 -left-40 w-96 h-96 rounded-full blur-3xl transition-all duration-1000 ${
             correctSelected
-              ? "bg-gradient-to-r from-cyan-400/20 to-teal-400/20"
+              ? "bg-gradient-to-r from-cyan-400/25 to-teal-400/25"
               : showReveal && !correctSelected
-              ? "bg-gradient-to-r from-pink-400/20 to-rose-400/20"
-              : "bg-gradient-to-r from-indigo-400/15 to-purple-400/15"
+              ? "bg-gradient-to-r from-pink-400/25 to-rose-400/25"
+              : "bg-gradient-to-r from-indigo-400/20 to-purple-400/20"
           }`}
           style={{
             animation: "float 10s ease-in-out infinite reverse",
             animationDelay: "2s",
           }}
         ></div>
-        <div
-          className={`absolute top-1/4 right-1/4 w-80 h-80 rounded-full blur-3xl transition-all duration-1000 ${
-            correctSelected
-              ? "bg-gradient-to-r from-teal-400/15 to-emerald-400/15"
-              : showReveal && !correctSelected
-              ? "bg-gradient-to-r from-rose-400/15 to-red-400/15"
-              : "bg-gradient-to-r from-violet-400/10 to-indigo-400/10"
-          }`}
-          style={{
-            animation: "float 12s ease-in-out infinite",
-            animationDelay: "4s",
-          }}
-        ></div>
       </div>
 
-      <div className="relative z-10 px-4 py-4 text-white h-screen flex flex-col">
-        {/* Enhanced Header */}
-        <div className="flex justify-between items-center mb-4 flex-shrink-0">
+      <div className="relative z-10 h-full flex flex-col text-white">
+        {/* Compact Header */}
+        <div className="flex justify-between items-center p-4 flex-shrink-0">
           <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-xl p-1 shadow-2xl">
             <button
               onClick={confirmEndQuiz}
-              className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white px-6 py-2.5 rounded-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:shadow-red-500/25"
+              className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white px-4 py-2 rounded-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300"
             >
               End Quiz
             </button>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex gap-3">
             {showReveal && !correctSelected && (
               <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-xl p-1 shadow-2xl">
                 <button
                   onClick={revealCorrectAnswer}
-                  className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white px-6 py-2.5 rounded-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:shadow-amber-500/25"
+                  className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white px-4 py-2 rounded-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300"
                 >
                   Reveal Answer
                 </button>
@@ -203,7 +277,7 @@ export default function GroupQuizQuestion() {
               <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-xl p-1 shadow-2xl">
                 <button
                   onClick={goToNext}
-                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-6 py-2.5 rounded-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:shadow-cyan-500/25"
+                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-4 py-2 rounded-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300"
                 >
                   Next →
                 </button>
@@ -212,17 +286,17 @@ export default function GroupQuizQuestion() {
           </div>
         </div>
 
-        {/* Enhanced Question Card */}
-        <div className="w-full mb-4 flex-shrink-0">
-          <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-2xl border border-white/30 rounded-2xl p-6 shadow-2xl relative overflow-hidden mx-4">
-            {/* Animated border effect */}
+        {/* Question Section - Compact but Visible */}
+        <div className="px-6 pb-3 flex-shrink-0">
+          <div className="bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-2xl border-2 border-white/30 rounded-2xl p-4 shadow-2xl relative overflow-hidden">
+            {/* Enhanced animated border effect */}
             <div
               className={`absolute inset-0 rounded-2xl transition-all duration-1000 ${
                 correctSelected
-                  ? "bg-gradient-to-r from-emerald-500/20 via-transparent to-cyan-500/20"
+                  ? "bg-gradient-to-r from-emerald-500/30 via-transparent to-cyan-500/30"
                   : showReveal && !correctSelected
-                  ? "bg-gradient-to-r from-red-500/20 via-transparent to-pink-500/20"
-                  : "bg-gradient-to-r from-purple-500/15 via-transparent to-blue-500/15"
+                  ? "bg-gradient-to-r from-red-500/30 via-transparent to-pink-500/30"
+                  : "bg-gradient-to-r from-purple-500/20 via-transparent to-blue-500/20"
               }`}
               style={{
                 animation: "pulse 3s ease-in-out infinite",
@@ -230,18 +304,18 @@ export default function GroupQuizQuestion() {
             ></div>
 
             <div className="relative z-10 space-y-3">
-              {/* English Question - Enhanced Typography */}
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center leading-tight">
-                <span className="bg-gradient-to-r from-white via-slate-100 to-white bg-clip-text text-transparent drop-shadow-lg">
+              {/* English Question - Smaller but Still Enhanced */}
+              <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-center leading-tight">
+                <span className="bg-gradient-to-r from-white via-slate-50 to-white bg-clip-text text-transparent drop-shadow-2xl">
                   {englishQuestion}
                 </span>
               </h2>
 
-              {/* Tamil Question - Refined Styling */}
+              {/* Tamil Question - Visible */}
               <div className="flex justify-center">
-                <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-lg rounded-xl px-4 py-2 border border-white/20">
-                  <h3 className="text-base md:text-lg font-medium text-center font-tamil">
-                    <span className="bg-gradient-to-r from-slate-300 to-slate-400 bg-clip-text text-transparent">
+                <div className="bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-xl rounded-xl px-4 py-2 border-2 border-white/30 shadow-xl">
+                  <h3 className="text-base md:text-xl lg:text-2xl font-bold text-center font-tamil">
+                    <span className="bg-gradient-to-r from-amber-200 via-yellow-200 to-orange-200 bg-clip-text text-transparent drop-shadow-lg">
                       {tamilQuestion}
                     </span>
                   </h3>
@@ -251,9 +325,9 @@ export default function GroupQuizQuestion() {
           </div>
         </div>
 
-        {/* Enhanced Timer */}
-        <div className="flex justify-center mb-4 flex-shrink-0">
-          <div className="bg-gradient-to-r from-white/15 to-white/5 backdrop-blur-xl border border-white/30 rounded-xl p-2 shadow-2xl">
+        {/* Timer - Fixed Position */}
+        <div className="flex justify-center pb-4 flex-shrink-0">
+          <div className="bg-gradient-to-r from-white/15 to-white/5 backdrop-blur-xl border border-white/30 rounded-xl p-2 shadow-xl">
             <CountdownTimer
               key={currentIndex}
               duration={15}
@@ -263,67 +337,8 @@ export default function GroupQuizQuestion() {
           </div>
         </div>
 
-        {/* Enhanced Options with Dynamic Layout */}
-        <div className="flex-1 flex items-center justify-center px-4 min-h-0">
-          <div className={`grid ${getGridLayout()} w-full h-full`}>
-            {englishOptions.map((englishOpt, idx) => {
-              const tamilOpt = tamilOptions[idx] || "";
-              const isWrong = selectedOptions.some(
-                (opt) => opt.en === englishOpt
-              );
-              const isCorrect =
-                englishOpt === englishCorrect && correctSelected;
-              const isDisabled = isWrong || isCorrect;
-
-              let buttonClass =
-                "bg-gradient-to-br from-slate-700/80 to-slate-800/80 hover:from-slate-600/90 hover:to-slate-700/90 border-slate-500/40";
-              let shadowClass = "hover:shadow-slate-500/20";
-
-              if (isCorrect) {
-                buttonClass =
-                  "bg-gradient-to-br from-emerald-600/90 to-teal-700/90 border-emerald-500/50";
-                shadowClass = "shadow-emerald-500/30";
-              } else if (isWrong) {
-                buttonClass =
-                  "bg-gradient-to-br from-red-600/90 to-pink-700/90 border-red-500/50";
-                shadowClass = "shadow-red-500/30";
-              }
-
-              return (
-                <button
-                  key={idx}
-                  onClick={() => handleAnswer(englishOpt, tamilOpt)}
-                  className={`
-                    group relative overflow-hidden min-h-[120px] md:min-h-[140px]
-                    backdrop-blur-xl border-2 rounded-2xl p-4 md:p-6
-                    transition-all duration-500 transform
-                    ${buttonClass}
-                    ${shadowClass}
-                    ${
-                      isDisabled
-                        ? "cursor-not-allowed opacity-90"
-                        : "hover:scale-105 hover:shadow-2xl"
-                    }
-                    ${shakeOption === englishOpt ? "animate-shake" : ""}
-                  `}
-                  disabled={isDisabled}
-                >
-                  {/* Button glow effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-
-                  <div className="relative z-10 text-center space-y-2 h-full flex flex-col justify-center">
-                    <div className="text-lg md:text-xl lg:text-2xl font-bold text-white drop-shadow-lg">
-                      {englishOpt}
-                    </div>
-                    <div className="text-sm md:text-base text-slate-300 font-tamil font-medium">
-                      {tamilOpt}
-                    </div>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-        </div>
+        {/* Options Section - Full Screen Usage */}
+        <div className="flex-1 px-4 pb-6">{getOptionsLayout()}</div>
       </div>
 
       {/* Enhanced Modals */}
