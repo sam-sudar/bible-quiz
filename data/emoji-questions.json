@@ -1,32 +1,102 @@
 [
   {
     "id": 1,
-    "emojis": "👶🌟🐄",
-    "answer": "Jesus in the manger"
+    "emojis": "🐑🔟➡️❓",
+    "answer": "Parable of the Lost Sheep (Luke 15:4)"
   },
   {
     "id": 2,
-    "emojis": "🕊️🌊👑",
-    "answer": "Jesus' baptism"
+    "emojis": "✝️⚰️🪦➡️🌅😲",
+    "answer": "Resurrection of Jesus (John 20)"
   },
   {
     "id": 3,
-    "emojis": "🥖🐟🐟",
-    "answer": "Feeding the 5,000"
+    "emojis": "👂🗡️😖➡️👂💫",
+    "answer": "Jesus heals servant’s ear (Luke 22:51)"
   },
   {
     "id": 4,
-    "emojis": "💤🌪️😱",
-    "answer": "Jesus calms the storm"
+    "emojis": "🧼🦶👨‍🏫",
+    "answer": "Jesus washes disciples’ feet (John 13:1–17)"
   },
   {
     "id": 5,
-    "emojis": "💀🪦🌅",
-    "answer": "Resurrection of Jesus"
+    "emojis": "🐴🌿👑🎉",
+    "answer": "Triumphal Entry / Palm Sunday (Matthew 21:1–11)"
   },
   {
     "id": 6,
-    "emojis": "👨‍🦯🙏💡",
-    "answer": "Jesus heals the blind man"
+    "emojis": "🍇🌿✂️🔥",
+    "answer": "I am the Vine, you are the branches (John 15:1–8)"
+  },
+  {
+    "id": 7,
+    "emojis": "🧱🏗️👷‍♂️🪨",
+    "answer": "Wise man builds on rock (Matthew 7:24–27)"
+  },
+  {
+    "id": 8,
+    "emojis": "🪙👵🧎‍♀️❤️",
+    "answer": "Poor Widow's Offering (Mark 12:41–44)"
+  },
+  {
+    "id": 9,
+    "emojis": "⏰👰🕯️🚪❌",
+    "answer": "Parable of the Ten Virgins (Matthew 25:1–13)"
+  },
+  {
+    "id": 10,
+    "emojis": "👭🪦😭➡️👼😲",
+    "answer": "Women at the empty tomb (John 20:1–18)"
+  },
+  {
+    "id": 11,
+    "emojis": "🔔🕊️🌍❤️",
+    "answer": "Angels' message at Jesus’ birth (Luke 2:14)"
+  },
+  {
+    "id": 12,
+    "emojis": "✋😷💪🧼",
+    "answer": "Jesus heals leper with a touch (Matthew 8:1–4)"
+  },
+  {
+    "id": 13,
+    "emojis": "🐓🍽️🍞🍷",
+    "answer": "The Last Supper (Luke 22:14–20)"
+  },
+  {
+    "id": 14,
+    "emojis": "👨🛏️🧎‍♂️🗣️🏃",
+    "answer": "Jesus heals paralyzed man (Luke 5:17–26)"
+  },
+  {
+    "id": 15,
+    "emojis": "🧙‍♂️⭐🐫🎁➡️👶",
+    "answer": "Wise Men visit Jesus (Matthew 2:1–12)"
+  },
+  {
+    "id": 16,
+    "emojis": "🌾👨‍🌾🌱🪴🔥",
+    "answer": "Parable of the Sower (Matthew 13:1–23)"
+  },
+  {
+    "id": 17,
+    "emojis": "👨‍👦🏃‍♂️💸🐖➡️🤝🥳",
+    "answer": "Prodigal Son (Luke 15:11–32)"
+  },
+  {
+    "id": 18,
+    "emojis": "⛪💰💥😠",
+    "answer": "Jesus cleanses the temple (Matthew 21:12–13)"
+  },
+  {
+    "id": 19,
+    "emojis": "🚪👊🗣️💖",
+    "answer": "Jesus says: I stand at the door and knock (Revelation 3:20)"
+  },
+  {
+    "id": 20,
+    "emojis": "🐟🍞🍞👨‍👩‍👧‍👦",
+    "answer": "Jesus feeds the 5,000 (John 6:1–14)"
   }
 ]

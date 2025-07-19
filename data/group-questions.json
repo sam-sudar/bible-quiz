@@ -1,27 +1,359 @@
 [
   {
-    "question": "What did John the Baptist eat in the wilderness?",
-    "options": [
-      "Bread and Fish",
-      "Locusts and Honey",
-      "Figs and Water",
-      "Dates and Milk"
-    ],
-    "correct": "Locusts and Honey"
+    "question_en": "For whoever wants to save their life will lose it, but whoever loses their life for me and for the __________ will save it. (Mark 8:35)",
+    "options_en": ["Father", "Gospel", "Holy Spirit"],
+    "correct_en": "Gospel",
+    "question_ta": "எவன் தன் ஜீவனைக் காப்பாற்றிக்கொள்ள விரும்புகிறானோ அவன் அதை இழந்துபோவான்; என்னிமித்தமாகவும், ____ நிமித்தமாகவும் தன் ஜீவனை இழந்துபோகிறவனோ அதைக் காப்பான்.",
+    "options_ta": ["பிதா", "சுவிசேஷம்", "பரிசுத்த ஆவி"],
+    "correct_ta": "சுவிசேஷம்"
   },
   {
-    "question": "Who baptized Jesus?",
-    "options": ["Peter", "John the Baptist", "Moses", "Andrew"],
-    "correct": "John the Baptist"
+    "question_en": "Jesus warned the disciples \"Watch out for the yeast of the ________________\" (Mark 8:15)",
+    "options_en": [
+      "Jews and Herod",
+      "Pharisees and Sadducees",
+      "Pharisees and Herod"
+    ],
+    "correct_en": "Pharisees and Herod",
+    "question_ta": "இயேசு சீஷர்களை எச்சரித்தார்: \"____ புளித்தமாவைக்குறித்து எச்சரிக்கையாயிருங்கள்.\"",
+    "options_ta": [
+      "யூதர்கள் மற்றும் ஏரோதின்",
+      "பரிசேயர்கள் மற்றும் சதுசேயரின்",
+      "பரிசேயர்கள் மற்றும் ஏரோதின்"
+    ],
+    "correct_ta": "பரிசேயர்கள் மற்றும் ஏரோதின்"
   },
   {
-    "question": "What was Jesus’ first miracle?",
-    "options": [
-      "Feeding 5000",
-      "Walking on Water",
-      "Turning Water into Wine",
-      "Healing a Blind Man"
+    "question_en": "Whom did Jesus take to the mountain where he was transfigured? (Mark 9:2)",
+    "options_en": [
+      "Peter James and Andrew",
+      "James, John and Matthew",
+      "James John and Peter"
     ],
-    "correct": "Turning Water into Wine"
+    "correct_en": "James John and Peter",
+    "question_ta": "இயேசு எவரைத் தம்முடன் மறுரூபமடைந்த மலைக்குக் கொண்டுசென்றார்?",
+    "options_ta": [
+      "பேதுரு, யாக்கோபு மற்றும் அந்திரேயா",
+      "யாக்கோபு, யோவான் மற்றும் மத்தேயு",
+      "யாக்கோபு, யோவான் மற்றும் பேதுரு"
+    ],
+    "correct_ta": "யாக்கோபு, யோவான் மற்றும் பேதுரு"
+  },
+  {
+    "question_en": "\"Everything is possible for _____________.\" (Mark 9:23)",
+    "options_en": [
+      "The one who has good intentions",
+      "The one who believes",
+      "The one who goes to church",
+      "The one who prays in tongues"
+    ],
+    "correct_en": "The one who believes",
+    "question_ta": "______ எல்லாம் கூடும்",
+    "options_ta": [
+      "நல்ல எண்ணங்கள் உள்ளவனுக்கு",
+      "விசுவாசிக்கிறவனுக்கு",
+      "சபைக்குச் செல்கிறவனுக்கு",
+      "அந்நிய பாஷைகளில் ஜெபிக்கிறவனுக்கு"
+    ],
+    "correct_ta": "விசுவாசிக்கிறவனுக்கு"
+  },
+  {
+    "question_en": "Zechariah belonged to the priestly division of ______________. (Luke 1:5)",
+    "options_en": ["Melchizedek", "Abijah", "Abihu", "Ananias"],
+    "correct_en": "Abijah",
+    "question_ta": "சகரியா எந்த ஆசாரிய வகுப்பைச் சேர்ந்தவர்?",
+    "options_ta": ["மெல்கிசேதேக்கு", "அபியா", "அபிகூ", "அனனியா"],
+    "correct_ta": "அபியா"
+  },
+  {
+    "question_en": "What was Simeon waiting for? (Luke 2:25)",
+    "options_en": [
+      "The birth of a New King",
+      "Consolation of Israel",
+      "To become the High Priest",
+      "The destruction of Roman Empire"
+    ],
+    "correct_en": "Consolation of Israel",
+    "question_ta": "சிமியோன் எதற்காகக் காத்திருந்தார்?",
+    "options_ta": [
+      "ஒரு புதிய ராஜாவின் பிறப்பு",
+      "இஸ்ரவேலின் ஆறுதல்",
+      "பிரதான ஆசாரியனாக ஆவதற்கு",
+      "ரோமானியப் பேரரசின் அழிவு"
+    ],
+    "correct_ta": "இஸ்ரவேலின் ஆறுதல்"
+  },
+  {
+    "question_en": "The tower in Siloam fell and killed how many people? (Luke 13:4)",
+    "options_en": ["Fifteen", "Eleven", "Eighteen", "Sixteen"],
+    "correct_en": "Eighteen",
+    "question_ta": "சீலோவாமிலிருந்த கோபுரம் இடிந்து விழுந்ததில் எத்தனை பேர் இறந்தனர்?",
+    "options_ta": ["பதினைந்து", "பதினொரு", "பதினெட்டு", "பதினாறு"],
+    "correct_ta": "பதினெட்டு"
+  },
+  {
+    "question_en": "Do not fear, little flock, for it is your father's good pleasure to give you __________. (Luke 12:32)",
+    "options_en": ["Holy Spirit", "Kingdom", "Wisdom"],
+    "correct_en": "Kingdom",
+    "question_ta": "பயப்படாதே, சிறுமந்தையே, ஏனெனில் உங்களுக்கு ____ கொடுக்க உங்கள் பிதா பிரியப்பட்டிருக்கிறார்.",
+    "options_ta": ["பரிசுத்த ஆவி", "ராஜ்யம்", "ஞானம்"],
+    "correct_ta": "ராஜ்யம்"
+  },
+  {
+    "question_en": "Anna the prophetess, the daughter of Phanuel belonged to which tribe? (Luke 2:36)",
+    "options_en": ["Levi", "Asher", "Judah", "Reuben"],
+    "correct_en": "Asher",
+    "question_ta": "அன்னாள் என்னும் தீர்க்கதரிசி, பனுவேலின் குமாரத்தி, எந்தக் கோத்திரத்தைச் சேர்ந்தவர்?",
+    "options_ta": ["லேவி", "ஆசேர்", "யூதா", "ரூபன்"],
+    "correct_ta": "ஆசேர்"
+  },
+  {
+    "question_en": "The Son of Man has power on earth to _______________. (Mark 2:10)",
+    "options_en": [
+      "to heal",
+      "to forgive sins",
+      "to perform miracles",
+      "to resurrect"
+    ],
+    "correct_en": "to forgive sins",
+    "question_ta": "மனுஷகுமாரனுக்குப் பூமியிலே ____ அதிகாரம் உண்டு.",
+    "options_ta": [
+      "குணமாக்க",
+      "பாவங்களை மன்னிக்க",
+      "அற்புதங்களைச் செய்ய",
+      "உயிர்ப்பிக்க"
+    ],
+    "correct_ta": "பாவங்களை மன்னிக்க"
+  },
+  {
+    "question_en": "Jesus did not come to call the righteous but sinners to ___________________. (Mark 2:17)",
+    "options_en": ["forgiveness", "repentance", "redemption", "sanctification"],
+    "correct_en": "repentance",
+    "question_ta": "நீதிமான்களை அல்ல, பாவிகளையே _____ இயேசு வந்திருக்கிறார்.",
+    "options_ta": ["மன்னிக்க", "மனந்திரும்ப", "மீட்க்க", "பரிசுத்தப்படுத்த"],
+    "correct_ta": "மனந்திரும்ப"
+  },
+  {
+    "question_en": "Jesus said, for whoever ________________________ is my brother and My sister and mother. (Mark 3:35)",
+    "options_en": [
+      "follows commandments",
+      "righteous",
+      "does the will of God",
+      "repents"
+    ],
+    "correct_en": "does the will of God",
+    "question_ta": "இயேசு சொன்னார், எவன் ________ என் சகோதரனும் என் சகோதரியும் தாயுமாய் இருக்கிறான்.",
+    "options_ta": [
+      "கட்டளைகளைப் பின்பற்றுகிறானோ",
+      "நீதிமானோ",
+      "தேவனுடைய சித்தத்தைச் செய்கிறானோ",
+      "மனந்திரும்புகிறானோ"
+    ],
+    "correct_ta": "தேவனுடைய சித்தத்தைச் செய்கிறானோ"
+  },
+  {
+    "question_en": "Who was Jairus? (Mark 5:22)",
+    "options_en": [
+      "ruler of the synagogue",
+      "centurion",
+      "tax collector",
+      "High Priest"
+    ],
+    "correct_en": "ruler of the synagogue",
+    "question_ta": "யவீரு யார்?",
+    "options_ta": [
+      "ஜெப ஆலயத் தலைவர்",
+      "நூற்றுக்கதிபதி",
+      "ஆயக்காரன்",
+      "பிரதான ஆசாரியன்"
+    ],
+    "correct_ta": "ஜெப ஆலயத் தலைவர்"
+  },
+  {
+    "question_en": "What does Talitha Cumi mean? (Mark 5:41)",
+    "options_en": [
+      "little girl, I say to you rise",
+      "little girl, rise and walk",
+      "little girl, open your eyes",
+      "little girl, stand still"
+    ],
+    "correct_en": "little girl, I say to you rise",
+    "question_ta": "தலிதா குமி என்பதன் பொருள் என்ன?",
+    "options_ta": [
+      "சிறுபெண்ணே, உனக்குச் சொல்கிறேன் எழுந்திரு",
+      "சிறுபெண்ணே, எழுந்து நட",
+      "சிறுபெண்ணே, உன் கண்களைத் திற",
+      "சிறுபெண்ணே, அசையாமல் நில்"
+    ],
+    "correct_ta": "சிறுபெண்ணே, உனக்குச் சொல்கிறேன் எழுந்திரு"
+  },
+  {
+    "question_en": "In Nazareth, Jesus could not perform miracles because of the people's _______________. (Mark 6:5,6)",
+    "options_en": ["Disobedience", "Hatred", "Unbelief", "Sin"],
+    "correct_en": "Unbelief",
+    "question_ta": "நசரேத்தில், மக்களின் ____ காரணமாக இயேசு அற்புதங்களைச் செய்ய முடியவில்லை.",
+    "options_ta": [
+      "கீழ்ப்படியாமையின்",
+      "வெறுப்பின்",
+      "அவிசுவாசத்தின்",
+      "பாவத்தின்"
+    ],
+    "correct_ta": "அவிசுவாசத்தின்"
+  },
+  {
+    "question_en": "Who prophesied, \"This people honour me with their lips, but their heart is far from me\"? (Mark 7:6)",
+    "options_en": ["Ezekiel", "Isaiah", "Jeremiah", "Daniel"],
+    "correct_en": "Isaiah",
+    "question_ta": "\"இந்த மக்கள் தங்கள் உதடுகளால் என்னைக் கனம்பண்ணுகிறார்கள், ஆனால் அவர்களுடைய இருதயம் எனக்குத் தூரமாய் இருக்கிறது\" என்று தீர்க்கதரிசனம் உரைத்தவர் யார்?",
+    "options_ta": ["எசேக்கியேல்", "ஏசாயா", "எரேமியா", "தானியேல்"],
+    "correct_ta": "ஏசாயா"
+  },
+  {
+    "question_en": "What defiles a Man? (Mark 7:14-23)",
+    "options_en": [
+      "The things that enters a man from outside",
+      "The things that come out of him",
+      "The things that enter his heart"
+    ],
+    "correct_en": "The things that come out of him",
+    "question_ta": "மனுஷனைத் தீட்டுப்படுத்துவது எது?",
+    "options_ta": [
+      "மனுஷனுக்கு வெளியேயிருந்து உள்ளே வருகிற காரியங்கள்",
+      "அவனுக்குள்ளிருந்து புறப்படுகிற காரியங்கள்",
+      "அவனுடைய இருதயத்திற்குள் நுழைகிற காரியங்கள்"
+    ],
+    "correct_ta": "அவனுக்குள்ளிருந்து புறப்படுகிற காரியங்கள்"
+  },
+  {
+    "question_en": "For everyone will be seasoned with _________ and every sacrifice will be seasoned with salt. (Mark 9:49)",
+    "options_en": ["Love", "Fire", "Faith"],
+    "correct_en": "Fire",
+    "question_ta": "எல்லோரும் ____ ஆல் உப்பிடப்படுவார்கள், எல்லாப் பலிகளும் உப்பால் உப்பிடப்படும்.",
+    "options_ta": ["அன்பால்", "அக்கினியால்", "விசுவாசத்தால்"],
+    "correct_ta": "அக்கினியால்"
+  },
+  {
+    "question_en": "Simon the Cyrenian who bore the cross of Jesus was the father of? (Mark 15:21)",
+    "options_en": ["Alexander", "Rufus", "Both a & b"],
+    "correct_en": "Both a & b",
+    "question_ta": "இயேசுவின் சிலுவையைச் சுமந்த சிரேனே சீமோன் யாருடைய தந்தை?",
+    "options_ta": ["அலெக்சாண்டர்", "ரூஃபஸ்", "இரண்டும் (a & b)"],
+    "correct_ta": "இரண்டும் (a & b)"
+  },
+  {
+    "question_en": "Who said to Jesus, \"Let one of us sit at your right and the other at your left in your glory.\" (Mark 10:35)",
+    "options_en": ["James and John", "Peter and Andrew", "John and Peter"],
+    "correct_en": "James and John",
+    "question_ta": "\"உமது மகிமையில் எங்களில் ஒருவன் உம்முடைய வலது பக்கத்திலும் மற்றவன் இடது பக்கத்திலும் உட்காரட்டும்\" என்று இயேசுவிடம் சொன்னது யார்?",
+    "options_ta": [
+      "யாக்கோபும் யோவானும்",
+      "பேதுருவும் அந்திரேயாவும்",
+      "யோவானும் பேதுருவும்"
+    ],
+    "correct_ta": "யாக்கோபும் யோவானும்"
+  },
+  {
+    "question_en": "Which disciple confessed Jesus as \"The Christ of God.\" (Luke 9:20)",
+    "options_en": ["Matthew", "Peter", "Thomas"],
+    "correct_en": "Peter",
+    "question_ta": "எந்தச் சீடன் இயேசுவை \"தேவனுடைய கிறிஸ்து\" என்று அறிக்கையிட்டான்?",
+    "options_ta": ["மத்தேயு", "பேதுரு", "தோமா"],
+    "correct_ta": "பேதுரு"
+  },
+  {
+    "question_en": "Who said, \"For my eyes have seen your salvation.\" (Luke 2:30)",
+    "options_en": ["Mary", "Elizabeth", "Simeon"],
+    "correct_en": "Simeon",
+    "question_ta": "\"என் கண்கள் உம்முடைய இரட்சிப்பைக் கண்டன\" என்று சொன்னது யார்?",
+    "options_ta": ["மரியாள்", "எலிசபெத்", "சிமியோன்"],
+    "correct_ta": "சிமியோன்"
+  },
+  {
+    "question_en": "Every year Jesus' parents went to Jerusalem at the Feast of ___________. (Luke 2:41)",
+    "options_en": ["Passover", "Dedication", "Tabernacles"],
+    "correct_en": "Passover",
+    "question_ta": "ஒவ்வொரு வருடமும் இயேசுவின் பெற்றோர் ____ பண்டிகையின்போது எருசலேமுக்குப் போவார்கள்.",
+    "options_ta": ["பஸ்கா", "பிரதிஷ்டை", "கூடார"],
+    "correct_ta": "பஸ்கா"
+  },
+  {
+    "question_en": "What shone around the shepherds when Jesus was born? (Luke 2:9)",
+    "options_en": [
+      "glory of the Lord",
+      "brightness of Gabriel",
+      "The moonlight"
+    ],
+    "correct_en": "glory of the Lord",
+    "question_ta": "இயேசு பிறந்தபோது மேய்ப்பர்களைச் சுற்றி என்ன பிரகாசித்தது?",
+    "options_ta": ["கர்த்தருடைய மகிமை", "காபிரியேலின் பிரகாசம்", "நிலவொளி"],
+    "correct_ta": "கர்த்தருடைய மகிமை"
+  },
+  {
+    "question_en": "According to Jesus who will save his life? (Luke 9:24)",
+    "options_en": [
+      "whoever follows me",
+      "whoever loses his life",
+      "whoever seeks first his kingdom"
+    ],
+    "correct_en": "whoever loses his life",
+    "question_ta": "இயேசுவின்படி யார் தன் ஜீவனைக் காப்பாற்றுவார்?",
+    "options_ta": [
+      "என்னைப் பின்பற்றுகிற எவனும்",
+      "தன் ஜீவனை இழக்கிற எவனும்",
+      "முதலில் தன் ராஜ்யத்தைத் தேடுகிற எவனும்"
+    ],
+    "correct_ta": "தன் ஜீவனை இழக்கிற எவனும்"
+  },
+  {
+    "question_en": "whoever receives Jesus receives whom? (Luke 9:48)",
+    "options_en": [
+      "The Father in Heaven",
+      "The one who sent Jesus",
+      "The Little children"
+    ],
+    "correct_en": "The one who sent Jesus",
+    "question_ta": "இயேசுவைப் பெற்றுக்கொள்பவன் யாரைப் பெற்றுக்கொள்கிறான்?",
+    "options_ta": [
+      "பரலோகத்திலுள்ள பிதாவை",
+      "இயேசுவை அனுப்பினவரை",
+      "சிறு பிள்ளைகளை"
+    ],
+    "correct_ta": "இயேசுவை அனுப்பினவரை"
+  },
+  {
+    "question_en": "The ancestors spoke well of whom? (Luke 6:26)",
+    "options_en": ["Moses", "False prophets", "Evil Kings"],
+    "correct_en": "False prophets",
+    "question_ta": "பிதாக்கள் யாரைப் பற்றி நன்றாகப் பேசினார்கள்?",
+    "options_ta": ["மோசே", "கள்ளத் தீர்க்கதரிசிகள்", "பொல்லாத ராஜாக்கள்"],
+    "correct_ta": "கள்ளத் தீர்க்கதரிசிகள்"
+  },
+  {
+    "question_en": "What sign will be given to the evil generation? (Luke 11:29,30)",
+    "options_en": ["Sign of John the Baptist", "Sign of Noah", "Sign of Jonah"],
+    "correct_en": "Sign of Jonah",
+    "question_ta": "பொல்லாத சந்ததிக்கு எந்த அடையாளம் கொடுக்கப்படும்?",
+    "options_ta": [
+      "யோவான் ஸ்நானகனின் அடையாளம்",
+      "நோவாவின் அடையாளம்",
+      "யோனாவின் அடையாளம்"
+    ],
+    "correct_ta": "யோனாவின் அடையாளம்"
+  },
+  {
+    "question_en": "Many lepers were there in Israel in the time of which prophet? (Luke 4:27)",
+    "options_en": ["Elisha", "Elijah", "Jeremiah"],
+    "correct_en": "Elisha",
+    "question_ta": "எந்தத் தீர்க்கதரிசியின் காலத்தில் இஸ்ரவேலில் அநேக குஷ்டரோகிகள் இருந்தார்கள்?",
+    "options_ta": ["எலிசா", "எலியா", "எரேமியா"],
+    "correct_ta": "எலிசா"
+  },
+  {
+    "question_en": "Jesus said who will be given more? (Luke 8:18)",
+    "options_en": ["Whoever has", "Whoever does not have", "Whoever ask"],
+    "correct_en": "Whoever has",
+    "question_ta": "இயேசு யாருக்கு அதிகம் கொடுக்கப்படும் என்றார்?",
+    "options_ta": ["உள்ளவனுக்கு", "இல்லாதவனுக்கு", "கேட்கிறவனுக்கு"],
+    "correct_ta": "உள்ளவனுக்கு"
   }
 ]
