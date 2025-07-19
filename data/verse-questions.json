@@ -1,34 +1,42 @@
 [
   {
-    "reference": "Matthew 5:14",
+    "reference": "Matthew 6:33",
     "original": [
-      "You are the light of",
-      "the world. A town built",
-      "on a hill cannot be hidden."
+      "But seek first his kingdom",
+      "and his righteousness, and all",
+      "these things will be given to you as well."
     ],
     "shuffled": [
-      "the world. A town built",
-      "on a hill cannot be hidden.",
-      "You are the light of"
+      "these things will be given to you as well.",
+      "But seek first his kingdom",
+      "and his righteousness, and all"
     ]
   },
   {
-    "reference": "Mark 10:27",
+    "reference": "Mark 16:15",
     "original": [
-      "With man this is impossible,",
-      "but not with God; all",
-      "things are possible with God."
+      "He said to them, 'Go into",
+      "all the world and preach the gospel",
+      "to all creation.'"
     ],
     "shuffled": [
-      "With man this is impossible,",
-      "things are possible with God.",
-      "but not with God; all"
+      "all the world and preach the gospel",
+      "to all creation.",
+      "He said to them, 'Go into"
     ]
   },
   {
-    "reference": "Luke 6:31",
-    "original": ["Do to others", "as you would", "have them do to you."],
-    "shuffled": ["as you would", "Do to others", "have them do to you."]
+    "reference": "Luke 9:23",
+    "original": [
+      "Whoever wants to be my disciple",
+      "must deny themselves and take up",
+      "their cross daily and follow me."
+    ],
+    "shuffled": [
+      "their cross daily and follow me.",
+      "must deny themselves and take up",
+      "Whoever wants to be my disciple"
+    ]
   },
   {
     "reference": "John 3:16",
@@ -38,9 +46,9 @@
       "believes in him shall not perish but have eternal life."
     ],
     "shuffled": [
-      "For God so loved the world that he",
+      "gave his one and only Son, that whoever",
       "believes in him shall not perish but have eternal life.",
-      "gave his one and only Son, that whoever"
+      "For God so loved the world that he"
     ]
   },
   {
@@ -52,8 +60,8 @@
     ],
     "shuffled": [
       "the truth and the life. No one",
-      "Jesus answered, 'I am the way and",
-      "comes to the Father except through me.'"
+      "comes to the Father except through me.'",
+      "Jesus answered, 'I am the way and"
     ]
   }
 ]
