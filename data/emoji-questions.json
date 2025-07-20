@@ -7,13 +7,13 @@
   },
   {
     "id": 2,
-    "emojis": "🍇🌿✂️🔥",
+    "emojis": "🍷🍇🌿",
     "answer": "I am the Vine, you are the branches (John 15:1–8)",
     "context": "Guess the teaching of Jesus"
   },
   {
     "id": 3,
-    "emojis": "👨🛏️🧎‍♂️🗣️🏃",
+    "emojis": "👨🛏️🗣️🏃",
     "answer": "Jesus heals paralyzed man (Luke 5:24)",
     "context": "Guess the miracle"
   },
@@ -24,32 +24,20 @@
     "context": "Guess the event"
   },
   {
-    "id": 21,
-    "emojis": "🌾👨‍🌾🌱🪴🔥",
-    "answer": "Parable of the Sower (Matthew 13:1–23)",
-    "context": "Guess the parable"
-  },
-  {
     "id": 6,
-    "emojis": "🧱🏗️👷‍♂️🪨",
+    "emojis": "🧱🏠👷‍♂️🪨",
     "answer": "Wise man builds house on the rock (Matthew 7:24–27)",
     "context": "Guess the parable"
-  },
-  {
-    "id": 7,
-    "emojis": "👭🪦😭➡️👼😲",
-    "answer": "Women discover the empty tomb (John 20:1–18)",
-    "context": "Guess the event after resurrection"
   },
   {
     "id": 8,
     "emojis": "✝️⚰️🪦➡️🌅😲",
     "answer": "Resurrection of Jesus (John 20)",
-    "context": "Guess the resurrection story"
+    "context": "Guess the story"
   },
   {
     "id": 9,
-    "emojis": "🐑🔟➡️❓",
+    "emojis": "🐑💯➡️❓",
     "answer": "Parable of the Lost Sheep (Luke 15:4)",
     "context": "Guess the parable"
   },
@@ -60,22 +48,16 @@
     "context": "Guess the parable"
   },
   {
-    "id": 11,
-    "emojis": "🧼🦶👨‍🏫",
-    "answer": "Jesus washes disciples' feet (John 13:1–17)",
-    "context": "Guess what Jesus did to show humility"
-  },
-  {
     "id": 12,
     "emojis": "🐴🌿👑🎉",
-    "answer": "Triumphal Entry (Matthew 21:1–11)",
-    "context": "Guess the Palm Sunday event"
+    "answer": "Palm Sunday (Matthew 21:1–11)",
+    "context": "Guess the event"
   },
   {
     "id": 13,
     "emojis": "⛪💰💥😠",
     "answer": "Jesus cleanses the temple (Matthew 21:12–13)",
-    "context": "Guess what made Jesus angry"
+    "context": "Guess what event"
   },
   {
     "id": 14,
@@ -90,28 +72,16 @@
     "context": "Guess the act of generosity"
   },
   {
-    "id": 16,
-    "emojis": "🚪👊🗣️💖",
-    "answer": "Jesus stands at the door and knocks (Revelation 3:20)",
-    "context": "Guess the message of Jesus"
-  },
-  {
-    "id": 17,
-    "emojis": "🔔🕊️🌍❤️",
-    "answer": "Peace on earth, goodwill to men (Luke 2:14)",
-    "context": "Guess what angels sang"
-  },
-  {
     "id": 18,
     "emojis": "🐓🍽️🍞🍷",
     "answer": "The Last Supper (Luke 22:14–20)",
-    "context": "Guess what Jesus did before His arrest"
+    "context": "Guess what Jesus did"
   },
   {
     "id": 19,
     "emojis": "👂🗡️😖➡️👂💫",
     "answer": "Jesus heals servant’s ear (Luke 22:51)",
-    "context": "Guess the miracle during arrest"
+    "context": "Guess the miracle"
   },
   {
     "id": 20,
